@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import { loadTossPayments } from "@tosspayments/payment-sdk";
@@ -14,7 +13,6 @@ export default function Home() {
   const onPay = async () => {
     try {
       const tossPayments = await loadTossPayments(clientKey);
-      console.log("tossPayments: ", tossPayments);
 
       const res = await tossPayments.requestPayment("카드", {
         amount: 15000,
